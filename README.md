@@ -1,6 +1,6 @@
 # GeoQuiz Project
 The assignment will add a further condition to the GeoQuiz Project that we applied together in the lab today. Thus, the starting point will be from the last thing that we did in GeoQuiz Project.
-> Note: if you miss some piece of code through following the lab, you can find the last version of GeoQuiz Project in a folder called `GeoQuiz`
+> Note: If you miss some piece of code through following the lab, you can find the last version of GeoQuiz Project in this assignment.
 
 ## Part One - Modify Toast Position
 ---
