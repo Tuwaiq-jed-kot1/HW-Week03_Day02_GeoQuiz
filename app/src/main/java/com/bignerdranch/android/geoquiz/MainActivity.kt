@@ -1,6 +1,10 @@
 package com.bignerdranch.android.geoquiz
 
+import android.graphics.Color
+import android.graphics.Color.WHITE
 import android.os.Bundle
+import android.view.Gravity
+import android.view.Gravity.*
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -12,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var trueButton: Button
     private lateinit var falseButton: Button
     private lateinit var nextButton: Button
+    private lateinit var previousButton: Button
     private lateinit var questionTextView: TextView
 
     private val questionBank = listOf(
@@ -32,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         trueButton = findViewById(R.id.true_button)
         falseButton = findViewById(R.id.false_button)
         nextButton = findViewById(R.id.next_button)
+        previousButton = findViewById(R.id.btnPrevious)
         questionTextView = findViewById(R.id.question_text_view)
 
         trueButton.setOnClickListener { view: View ->
@@ -41,19 +47,29 @@ class MainActivity : AppCompatActivity() {
         falseButton.setOnClickListener { view: View ->
             checkAnswer(false)
         }
+        fun updateQuestion() {
+            val questionTextResId = questionBank[currentIndex].textResId
+            questionTextView.setText(questionTextResId)
+        }
 
         nextButton.setOnClickListener {
             currentIndex = (currentIndex + 1) % questionBank.size
             updateQuestion()
         }
+        previousButton.setOnClickListener {
+            if(currentIndex == 0){
+                (questionBank.size-1).also { currentIndex = it }
+                updateQuestion()
+            }else{
+                ((currentIndex - 1) % questionBank.size).also { currentIndex = it }
+                updateQuestion()
+            }
+        }
 
         updateQuestion()
     }
 
-    private fun updateQuestion() {
-        val questionTextResId = questionBank[currentIndex].textResId
-        questionTextView.setText(questionTextResId)
-    }
+
 
     private fun checkAnswer(userAnswer: Boolean) {
         val correctAnswer = questionBank[currentIndex].answer
@@ -62,7 +78,19 @@ class MainActivity : AppCompatActivity() {
         } else {
             R.string.incorrect_toast
         }
+
         Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
             .show()
+
+
+        val toast: Toast = Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
+        val txt: TextView? =  toast.view?.findViewById(android.R.id.message)
+        toast.setGravity(
+            TOP,
+            90,
+            0
+        )
+        toast.show()
+
     }
 }
