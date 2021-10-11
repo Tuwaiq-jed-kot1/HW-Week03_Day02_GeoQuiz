@@ -32,6 +32,21 @@
 
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/arrow_left"
+            android:drawablePadding="4dp"
+            android:text="@string/back_button" />
+
     <Button
         android:layout_width="wrap_content"
         android:id="@+id/next_button"
@@ -39,5 +54,10 @@
         android:text="@string/next_button"
         android:drawableEnd="@drawable/arrow_right"
         android:drawablePadding="4dp"/>
+
+
+</LinearLayout>
+
+
 
 </LinearLayout>
