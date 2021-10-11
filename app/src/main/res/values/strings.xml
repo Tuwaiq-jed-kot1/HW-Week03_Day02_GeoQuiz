@@ -15,4 +15,6 @@
     <string name="next_button">Next</string>
     <string name="correct_toast">Correct!</string>
     <string name="incorrect_toast">Incorrect!</string>
+    <string name="Prev_Button">\@string/Prev_Button</string>
+    <string name="prev">Prev</string>
 </resources>
