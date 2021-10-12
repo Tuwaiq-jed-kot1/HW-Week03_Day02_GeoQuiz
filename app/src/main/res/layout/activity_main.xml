@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/question_text_view"
-        android:layout_width="324dp"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
         android:gravity="center"
         android:padding="23"
@@ -24,8 +24,9 @@
         android:text="@string/true_button" />
 
     <LinearLayout
-        android:layout_width="63dp"
-        android:layout_height="90dp">
+        android:id="@+id/preveous"
+        android:layout_width="34dp"
+        android:layout_height="57dp">
 
     </LinearLayout>
 
@@ -34,6 +35,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/false_button" />
+
+    <Button
+        android:id="@+id/previous_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/arrow_right"
+        android:drawablePadding="4dp"
+        android:text="next" />
+
 
     <Button
         android:id="@+id/next_button"
@@ -45,30 +55,5 @@
 
 </LinearLayout>
 
-<LinearLayout
-android:layout_width="wrap_content"
-android:layout_height= "wrap_content">
-
-<Button
-android:id="@+id/previous_button"
-android:layout_width="warp_parent"
-android:layout_height="wrap_content"
-android:drawableStart="@drawable/arrow_left"
-android:drawablePadding="4dp"
-android:text="@string/previous_button"
-android:layout_marginEnd="4dp />
-
-<Button
-android:id="@+id/previous_button"
-android:layout_width="warp_parent"
-android:layout_height="wrap_content"
-android:drawableStart="@drawable/arrow_right"
-android:drawablePadding="4dp"
-android:text="next" />
 
 
-
-
-
-
-</LinearLayout>
