@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         val _toast1:TextView = toast1.view!!.findViewById(android.R.id.message)
         toast1.setGravity(Gravity.CENTER,5,5)
         if (userAnswer==correctAnswer){
-            _toast1.setTextColor(Color.BLUE)
+            _toast1.setTextColor(Color.GREEN)
             _toast1.setTextSize(24F)
             toast1.show()
         }else{
