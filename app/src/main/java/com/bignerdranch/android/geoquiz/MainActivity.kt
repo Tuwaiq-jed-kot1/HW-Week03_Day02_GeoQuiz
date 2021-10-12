@@ -53,18 +53,18 @@ class MainActivity : AppCompatActivity() {
             updateQuestion()
         }
 
-        previosButton.setOnClickListener {
-
-            currentIndex=(currentIndex-1) % questionBank.lastIndex
-            Toast.makeText(this,"$currentIndex",Toast.LENGTH_SHORT).show()
-
+    previosButton.setOnClickListener {
+        if(currentIndex == 0){
+            currentIndex = (questionBank.size-1)
             updateQuestion()
-
-
+        }else{
+            currentIndex = (currentIndex - 1) % questionBank.size
+            updateQuestion()
         }
-
-        updateQuestion()
     }
+
+    updateQuestion()
+}
 
 
     private fun updateQuestion() {
