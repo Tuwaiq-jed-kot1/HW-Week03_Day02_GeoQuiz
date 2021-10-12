@@ -1,6 +1,7 @@
 package com.bignerdranch.android.geoquiz
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var trueButton: Button
     private lateinit var falseButton: Button
+    private lateinit var previousButton: Button
     private lateinit var nextButton: Button
     private lateinit var questionTextView: TextView
 
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         trueButton = findViewById(R.id.true_button)
         falseButton = findViewById(R.id.false_button)
+        previousButton = findViewById(R.id.prev_button)
         nextButton = findViewById(R.id.next_button)
         questionTextView = findViewById(R.id.question_text_view)
 
@@ -40,6 +43,11 @@ class MainActivity : AppCompatActivity() {
 
         falseButton.setOnClickListener { view: View ->
             checkAnswer(false)
+        }
+
+        previousButton.setOnClickListener {
+            currentIndex = if(currentIndex <= 0) questionBank.size - 1 else (currentIndex - 1)
+            updateQuestion()
         }
 
         nextButton.setOnClickListener {
@@ -62,7 +70,8 @@ class MainActivity : AppCompatActivity() {
         } else {
             R.string.incorrect_toast
         }
-        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
-            .show()
+        val toast = Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
+        toast.setGravity(Gravity.TOP,0,90)
+        toast.show()
     }
 }
