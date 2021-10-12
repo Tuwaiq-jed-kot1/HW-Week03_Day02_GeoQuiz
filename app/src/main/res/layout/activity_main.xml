@@ -39,5 +39,12 @@
         android:text="@string/next_button"
         android:drawableEnd="@drawable/arrow_right"
         android:drawablePadding="4dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/btPrevious_button"
+        android:layout_height="wrap_content"
+        android:text="PREV"
+        android:drawableEnd="@drawable/arrow_right"
+        android:drawablePadding="4dp"/>
 
 </LinearLayout>
