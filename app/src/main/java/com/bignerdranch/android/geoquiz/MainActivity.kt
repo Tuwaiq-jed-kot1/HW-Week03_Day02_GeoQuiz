@@ -54,7 +54,8 @@ class MainActivity : AppCompatActivity() {
             updateQuestion()
         }
         backButton.setOnClickListener {
-            currentIndex = (currentIndex -1) % questionBank.size
+            currentIndex = (currentIndex -1)
+            if(currentIndex<0)currentIndex=questionBank.size-1
             updateQuestion()
         }
         updateQuestion()
